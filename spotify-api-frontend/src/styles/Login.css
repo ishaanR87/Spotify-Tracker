@@ -1,0 +1,27 @@
+#body {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+}
+
+#btncontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#loginbtn {
+    color : green;
+    font-size: 170%;
+    font-family: 'Times New Roman', Times, serif;
+    border-color: black;
+    border-radius: 12px;
+    padding: 10px;
+    transition-duration: 0.4s;
+}
+
+#loginbtn:hover {
+    background-color: green; 
+    opacity: 0.9;
+    color: black;
+}

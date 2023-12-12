@@ -8,9 +8,5 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RestController
 public class SpotifyController {
     
-    @GetMapping("/login")
-    public String login() {
-        return new SomeData();
-    }
-    
+
 }
