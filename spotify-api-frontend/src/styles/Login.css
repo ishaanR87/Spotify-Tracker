@@ -10,18 +10,25 @@
   align-items: center;
 }
 
+#button-wrapper p {
+  font-size: 20px;
+  margin-left: 20px;
+  font-family: "Courier New", Courier, monospace;
+}
+
 #loginbtn {
-    color : green;
-    font-size: 170%;
-    font-family: 'Times New Roman', Times, serif;
-    border-color: black;
-    border-radius: 12px;
-    padding: 10px;
-    transition-duration: 0.4s;
+  color: green;
+  font-size: 170%;
+  width: 100%;
+  font-family: Arial, Helvetica, sans-serif;
+  border-color: black;
+  border-radius: 12px;
+  padding: 10px;
+  transition-duration: 0.4s;
 }
 
 #loginbtn:hover {
-    background-color: green; 
-    opacity: 0.9;
-    color: black;
+  background-color: green;
+  opacity: 0.9;
+  color: black;
 }

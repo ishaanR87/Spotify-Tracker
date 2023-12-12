@@ -1,13 +1,15 @@
 import "../styles/Login.css";
 function Login() {
-  return ( 
+  return (
     <div id="body">
       <div id="btncontainer">
-  <button id="loginbtn">Login with Spotify</button>
-  </div>
-  </div>
-  
-);
+        <div id="button-wrapper">
+          <p><bold>Please Login with Spotify.</bold></p>
+          <button id="loginbtn">Login</button>
+        </div>
+      </div>
+    </div>
+  );
 }
 
 export default Login;

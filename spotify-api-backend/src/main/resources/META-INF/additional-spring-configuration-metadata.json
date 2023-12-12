@@ -1,0 +1,17 @@
+{"properties": [
+  {
+    "name": "CLIENT_SECRET",
+    "type": "java.lang.String",
+    "description": "A description for 'CLIENT_SECRET'"
+  },
+  {
+    "name": "CLIENT_SECRET",
+    "type": "java.lang.String",
+    "description": "A description for 'CLIENT_SECRET'"
+  },
+  {
+    "name": "CLIENT_SECRET",
+    "type": "java.lang.String",
+    "description": "A description for 'CLIENT_SECRET'"
+  }
+]}
