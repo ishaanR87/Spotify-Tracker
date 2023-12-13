@@ -20,7 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @RestController
 @CrossOrigin(origins = "http://localhost:5173")
 @RequestMapping("/api")
-public class SpotifyController {
+public class AuthController {
  
     private static final String clientId = "f97f541285d24c52a12939a59d65a69c";
     private static final String clientSecret = "f186b4e66470458e9ba2f50ca40042bb";
@@ -39,7 +39,7 @@ public class SpotifyController {
         
        
         AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
-                .scope("user-read-private,user-read-email") 
+                .scope("user-read-private, user-read-email, user-top-read")
                 .show_dialog(true) 
                 .build();
         
@@ -59,7 +59,7 @@ public class SpotifyController {
             spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
             spotifyApi.setRefreshToken(authorizationCodeCredentials.getRefreshToken());
             
-            return "Authorization Successful!"; 
+            return "Authorization Successful!";
         } catch (Exception e) {
             return "Authorization Failed: " + e.getMessage(); 
         }
