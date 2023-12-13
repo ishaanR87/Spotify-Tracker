@@ -30,5 +30,6 @@
 #loginbtn:hover {
   background-color: green;
   opacity: 0.9;
-  color: black;
+  color: white;
+  cursor: pointer;
 }

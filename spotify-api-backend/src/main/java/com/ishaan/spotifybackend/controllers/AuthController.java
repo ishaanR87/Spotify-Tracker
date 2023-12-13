@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.HttpServletResponse;
+
 
 
 @RestController
@@ -29,7 +31,8 @@ public class AuthController {
     private static SpotifyApi spotifyApi;
     
     // Endpoint to initiate the Spotify authorization process
-    @GetMapping("/login")
+    @GetMapping("login")
+    @CrossOrigin(origins = "http://localhost:5173")
     public String spotifyLogin() {
         spotifyApi = new SpotifyApi.Builder()
                 .setClientId(clientId)
@@ -48,7 +51,7 @@ public class AuthController {
     }
     
 
-    @GetMapping("/callback")
+    @GetMapping(value = "get-user-code")
     public String spotifyCallback(@RequestParam("code") String code) {
         try {
             AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(code)
