@@ -1,0 +1,40 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: url(https://source.unsplash.com/person-holding-iphone-6-turned-on-3NgcTH0CFJg);
+  background-size: cover;
+}
+
+.nav {
+  background-color: #0E9206;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 1rem;
+  height: 5vw;
+}
+
+.nav ul {
+  padding: 0%;
+  margin: 0%;
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav a {
+  color: inherit;
+  font-size: 1.5em;
+  text-decoration: none;
+  font-family:'Times New Roman', Times, serif
+}
+
+.nav a:hover {
+    color: black; 
+  }
+  
