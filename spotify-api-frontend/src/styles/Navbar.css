@@ -4,17 +4,15 @@
 
 body {
   margin: 0;
-  background: url(https://source.unsplash.com/person-holding-iphone-6-turned-on-3NgcTH0CFJg);
   background-size: cover;
 }
 
 .nav {
-  background-color: #0E9206;
+  background-color: #055c00;
   color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 2rem;
   padding: 0 1rem;
   height: 5vw;
 }
@@ -24,17 +22,21 @@ body {
   margin: 0%;
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .nav a {
   color: inherit;
-  font-size: 1.5em;
+  font-size: 1.4em;
   text-decoration: none;
-  font-family:'Times New Roman', Times, serif
+  font-family: Georgia, "Times New Roman", Times, serif;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  padding: 0.25rem;
 }
 
 .nav a:hover {
-    color: black; 
-  }
-  
+  color: black;
+  background-color: #1ed760;
+}

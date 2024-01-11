@@ -26,45 +26,23 @@ public class AuthController {
  
     private static final String clientId = "f97f541285d24c52a12939a59d65a69c";
     private static final String clientSecret = "f186b4e66470458e9ba2f50ca40042bb";
-   private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8080/callback");
+    private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8080/api/get-user-code/");
+    private String code = "";
     
-    private static SpotifyApi spotifyApi;
-    
-    // Endpoint to initiate the Spotify authorization process
-    @GetMapping("login")
-    @CrossOrigin(origins = "http://localhost:5173")
-    public String spotifyLogin() {
-        spotifyApi = new SpotifyApi.Builder()
-                .setClientId(clientId)
-                .setClientSecret(clientSecret)
-                .setRedirectUri(redirectUri)
-                .build();
-        
-       
-        AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
-                .scope("user-read-private, user-read-email, user-top-read")
-                .show_dialog(true) 
-                .build();
-        
-        URI uri = authorizationCodeUriRequest.execute();
-        return uri.toString(); 
-    }
-    
+    private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
+    .setClientId(clientId)
+    .setClientSecret(clientSecret)
+    .setRedirectUri(redirectUri)
+    .build();
 
-    @GetMapping(value = "get-user-code")
-    public String spotifyCallback(@RequestParam("code") String code) {
-        try {
-            AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(code)
-                    .build();
+    @GetMapping("login")
+    public String spotifyLogin() {
+        AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
+        .scope("user-read-private, user-read-email, user-top-read")
+        .show_dialog(true)
+        .build();
     
-            AuthorizationCodeCredentials authorizationCodeCredentials = authorizationCodeRequest.execute();
-            
-            spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
-            spotifyApi.setRefreshToken(authorizationCodeCredentials.getRefreshToken());
-            
-            return "Authorization Successful!";
-        } catch (Exception e) {
-            return "Authorization Failed: " + e.getMessage(); 
-        }
-    }
+    final URI uri = authorizationCodeUriRequest.execute();
+    return uri.toString();    
+}    
 }

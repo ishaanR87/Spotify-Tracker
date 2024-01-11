@@ -1,21 +1,23 @@
+// Navbar.js
 import React from "react";
-import "../styles/Navbar.css";
+import { Link } from "react-router-dom";
+import "../styles/NavBar.css";
 
 function Navbar() {
   return (
     <nav className="nav">
-      <a href="/home" className="home">
+      <Link to="/home" className="home">
         Spotify Tracker
-      </a>
+      </Link>
       <ul>
         <li>
-          <a href="/top-artists">My Top Artists</a>
+          <Link to="/top-artists">My Top Artists</Link>
         </li>
         <li>
-          <a href="/top-songs">My Top Songs</a>
+          <Link to="/top-songs">My Top Songs</Link>
         </li>
         <li>
-          <a href="/my-playlist">My Playlist</a>
+          <Link to="/my-playlist">My Playlist</Link>
         </li>
       </ul>
     </nav>
