@@ -1,41 +1,36 @@
 package com.ishaan.spotifybackend.controllers;
 
-import org.springframework.web.bind.annotation.RestController;
 
-import se.michaelthelin.spotify.SpotifyApi;
-import se.michaelthelin.spotify.SpotifyHttpManager;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.RestController;
 import se.michaelthelin.spotify.model_objects.credentials.AuthorizationCodeCredentials;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeRequest;
 import se.michaelthelin.spotify.requests.authorization.authorization_code.AuthorizationCodeUriRequest;
 
+import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.net.URI;
 
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RequestMapping;
-
-import javax.servlet.http.HttpServletResponse;
+import com.ishaan.spotifybackend.service.SpotifyService;
+import se.michaelthelin.spotify.SpotifyApi;
 
 @RestController
 @RequestMapping("/api")
 public class AuthController {
 
-    private static final String clientId = "f97f541285d24c52a12939a59d65a69c";
-    private static final String clientSecret = "f186b4e66470458e9ba2f50ca40042bb";
-    private static final URI redirectUri = SpotifyHttpManager.makeUri("http://localhost:8080/api/get-user-code/");
-    private String code = "";
+    private final SpotifyService spotifyService;
 
-
-    private static final SpotifyApi spotifyApi = new SpotifyApi.Builder()
-            .setClientId(clientId)
-            .setClientSecret(clientSecret)
-            .setRedirectUri(redirectUri)
-            .build();
+    @Autowired
+    public AuthController(SpotifyService spotifyService) {
+        this.spotifyService = spotifyService;
+    }
 
     @GetMapping("login")
     public String spotifyLogin() {
+        SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
         AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
                 .scope("user-read-private, user-read-email, user-top-read")
                 .show_dialog(true)
@@ -48,8 +43,8 @@ public class AuthController {
     @GetMapping(value = "get-user-code")
     public String getSpotifyCode(@RequestParam("code") String userCode, HttpServletResponse response)
             throws IOException {
-        code = userCode;
-        AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(code)
+        SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
+        AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(userCode)
                 .build();
 
         try {

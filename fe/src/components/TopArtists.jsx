@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "./NavBar";
 import "../styles/NavBar.css";
 
-function Home() {
+function TopArtists() {
   return (
     <div>
       <Navbar />
@@ -11,4 +11,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default TopArtists;
