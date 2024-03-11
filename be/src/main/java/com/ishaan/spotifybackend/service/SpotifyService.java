@@ -15,11 +15,16 @@ public class SpotifyService {
             @Value("${clientSecret}") String clientSecret,
             @Value("${redirectUri}") String redirectUri
     ) {
-        this.spotifyApi = new SpotifyApi.Builder()
-                .setClientId(clientId)
-                .setClientSecret(clientSecret)
-                .setRedirectUri(SpotifyHttpManager.makeUri(redirectUri))
-                .build();
+        try {
+            this.spotifyApi = new SpotifyApi.Builder()
+                    .setClientId(clientId)
+                    .setClientSecret(clientSecret)
+                    .setRedirectUri(SpotifyHttpManager.makeUri(redirectUri))
+                    .build();
+        } catch (Exception e) {
+            // Handle the exception, log an error, or throw a specific exception
+            throw new RuntimeException("Failed to create SpotifyApi instance: " + e.getMessage(), e);
+        }
     }
 
     public SpotifyApi getSpotifyApi() {
