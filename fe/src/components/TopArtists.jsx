@@ -1,32 +1,33 @@
-import {withRouter} from "react-router-dom";
-import React, { useEffect, useState } from 'react'
-
+import React, { useEffect, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 function TopArtists() {
+  const [userTopArtists, setUserTopArtists] = useState();
+  const navigate = useNavigate();
 
-    const [userTopArtists, setUserTopArtists] = useState();
+  useEffect(() => {
+    fetch("http://localhost:8080/api/top-artists")
+      .then(response => response.json())
+      .then(data => {
+        console.log(data);
+        setUserTopArtists(data);
+      })
+      .catch(error => {
+        console.error("Error fetching top artists:", error);
+      });
+  }, []);
 
-    useEffect(() => {
-        fetch("http://localhost:8080/api/top-artists")
-        .then(response => response.json())
-        .then(data => {
-            console.log(data)
-            setUserTopArtists(data)
-            })
-    }, [])
-
-    return (
-        <div>
-            {userTopArtists ? (
-                userTopArtists.map((artistResult) => {
-                    return <h1 key= {artistResult.name}>{artistResult.name}</h1>
-                })
-            ):
-            (
-                <h1>LOADING...</h1>
-            )}
-        </div>
-    );
+  return (
+    <div>
+      {userTopArtists ? (
+        userTopArtists.map((artistResult) => (
+          <h1 key={artistResult.name}>{artistResult.name}</h1>
+        ))
+      ) : (
+        <h1>LOADING...</h1>
+      )}
+    </div>
+  );
 }
 
-export default withRouter(TopArtists);
+export default TopArtists;
