@@ -47,7 +47,7 @@ public class AuthController {
         try {
             final AuthorizationCodeCredentials authorizationCodeCredentials = authorizationCodeRequest.execute();
 
-            // Set access and refresh token for further "spotifyApi" object usage
+            // Set access and refresh token 
             spotifyApi.setAccessToken(authorizationCodeCredentials.getAccessToken());
             spotifyApi.setRefreshToken(authorizationCodeCredentials.getRefreshToken());
 
@@ -56,6 +56,6 @@ public class AuthController {
             System.out.println("Error: " + e.getMessage());
         }
         System.out.println(spotifyApi.getAccessToken());
-        response.sendRedirect("http://localhost:3000/top-artists");
+        response.sendRedirect("http://localhost:3000/nav");
     }
 }

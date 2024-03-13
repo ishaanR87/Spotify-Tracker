@@ -1,27 +1,31 @@
-import React, { useEffect, useState } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from "react";
+import "../styles/TopArtists.css";
 
 function TopArtists() {
-  const [userTopArtists, setUserTopArtists] = useState();
-  const navigate = useNavigate();
+  const [topArtists, setTopArtists] = useState();
 
   useEffect(() => {
     fetch("http://localhost:8080/api/top-artists")
-      .then(response => response.json())
-      .then(data => {
+      .then((response) => response.json())
+      .then((data) => {
         console.log(data);
-        setUserTopArtists(data);
+        setTopArtists(data);
       })
-      .catch(error => {
+      .catch((error) => {
         console.error("Error fetching top artists:", error);
       });
   }, []);
 
   return (
-    <div>
-      {userTopArtists ? (
-        userTopArtists.map((artistResult) => (
-          <h1 key={artistResult.name}>{artistResult.name}</h1>
+    <div className="artists-grid">
+      {topArtists ? (
+        topArtists.map((artist) => (
+          <div key={artist.name} className="artist-card">
+            <img src={artist.images[0].url} alt={artist.name} />
+            <div className="card-body">
+              <h5 className="card-title">{artist.name}</h5>
+            </div>
+          </div>
         ))
       ) : (
         <h1>LOADING...</h1>

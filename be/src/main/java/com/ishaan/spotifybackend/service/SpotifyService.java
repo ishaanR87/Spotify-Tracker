@@ -22,7 +22,6 @@ public class SpotifyService {
                     .setRedirectUri(SpotifyHttpManager.makeUri(redirectUri))
                     .build();
         } catch (Exception e) {
-            // Handle the exception, log an error, or throw a specific exception
             throw new RuntimeException("Failed to create SpotifyApi instance: " + e.getMessage(), e);
         }
     }

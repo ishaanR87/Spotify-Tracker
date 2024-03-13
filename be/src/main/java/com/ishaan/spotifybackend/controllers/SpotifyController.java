@@ -5,7 +5,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import se.michaelthelin.spotify.model_objects.specification.Artist;
 import se.michaelthelin.spotify.model_objects.specification.Paging;
+import se.michaelthelin.spotify.model_objects.specification.Track;
 import se.michaelthelin.spotify.requests.data.personalization.simplified.GetUsersTopArtistsRequest;
+import se.michaelthelin.spotify.requests.data.personalization.simplified.GetUsersTopTracksRequest;
+
 import com.ishaan.spotifybackend.service.SpotifyService;
 
 import se.michaelthelin.spotify.SpotifyApi;
@@ -25,18 +28,35 @@ public class SpotifyController {
         SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
         final GetUsersTopArtistsRequest getUsersTopArtistsRequest = spotifyApi.getUsersTopArtists()
                 .time_range("medium_term")
-                .limit(10)
+                .limit(12)
                 .offset(5)
                 .build();
-
         try {
             final Paging<Artist> artistPaging = getUsersTopArtistsRequest.execute();
-
-            // return top artists as JSON
+        
             return artistPaging.getItems();
         } catch (Exception e) {
             System.out.println("Something went wrong!\n" + e.getMessage());
         }
         return new Artist[0];
+    }
+
+     @GetMapping(value = "top-tracks")
+    public Track[] getUserTopTracks() {
+        SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
+        final GetUsersTopTracksRequest getUsersTopTracksRequest = spotifyApi.getUsersTopTracks()
+                .time_range("medium_term")
+                .limit(15)
+                .offset(5)
+                .build();
+
+        try {
+            final Paging<Track> trackPaging = getUsersTopTracksRequest.execute();
+
+            return trackPaging.getItems();
+        } catch (Exception e) {
+            System.out.println("Something went wrong!\n" + e.getMessage());
+        }
+        return new Track[0];
     }
 }

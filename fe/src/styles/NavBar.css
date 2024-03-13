@@ -8,12 +8,10 @@ body {
 }
 
 .nav {
-  background-color: #055c00;
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 1rem;
+  padding: 1%;
   height: 5vw;
 }
 
@@ -27,9 +25,9 @@ body {
 
 .nav a {
   color: inherit;
-  font-size: 1.4em;
+  font-size: 25px;
   text-decoration: none;
-  font-family: Georgia, "Times New Roman", Times, serif;
+  font-family: "Courier New", Courier, monospace;
   height: 100%;
   display: flex;
   align-items: center;

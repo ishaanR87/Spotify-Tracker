@@ -1,0 +1,29 @@
+.artists-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.artist-card {
+  width: 100%;
+  font-size: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+
+  &:hover {
+    transform: scale(1.05);
+  }
+
+  img {
+    width: 100%;
+  }
+
+  .card-body {
+    padding: 10px;
+  }
+  .card-title {
+    margin: 0;  
+  }
+}

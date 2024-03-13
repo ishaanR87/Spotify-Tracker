@@ -14,7 +14,7 @@ function Navbar() {
           <Link to="/top-artists">My Top Artists</Link>
         </li>
         <li>
-          <Link to="/top-songs">My Top Songs</Link>
+          <Link to="/top-tracks">My Top Songs</Link>
         </li>
         <li>
           <Link to="/my-playlist">My Playlist</Link>
