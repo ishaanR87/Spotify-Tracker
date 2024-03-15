@@ -56,6 +56,6 @@ public class AuthController {
             System.out.println("Error: " + e.getMessage());
         }
         System.out.println(spotifyApi.getAccessToken());
-        response.sendRedirect("http://localhost:3000/nav");
+        response.sendRedirect("http://localhost:3000/home");
     }
 }

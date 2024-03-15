@@ -28,7 +28,7 @@ function TopArtists() {
           </div>
         ))
       ) : (
-        <h1>LOADING...</h1>
+        <h1>Retrieving...</h1>
       )}
     </div>
   );

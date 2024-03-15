@@ -2,7 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./src/components/Login";
 import TopArtists from "./src/components/TopArtists";
-import NavBar from "./src/components/Navbar";
+import Home from "./src/components/Home";
 import TopTracks from "./src/components/TopTracks";
 
 function App() {
@@ -11,7 +11,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/top-artists" element={<TopArtists />} />
-        <Route path="/nav" element={<NavBar />} />
+        <Route path="/home" element={<Home />} />
         <Route path="/top-tracks" element={<TopTracks />} />
       </Routes>
     </BrowserRouter>
