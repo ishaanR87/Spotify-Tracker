@@ -18,6 +18,9 @@ function Navbar() {
         <li>
           <Link to="/my-playlist">My Playlist</Link>
         </li>
+        <li>
+          <Link to="/">Logout</Link>
+        </li>
       </ul>
     </nav>
   );

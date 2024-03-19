@@ -28,7 +28,7 @@ public class SpotifyController {
         SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
         final GetUsersTopArtistsRequest getUsersTopArtistsRequest = spotifyApi.getUsersTopArtists()
                 .time_range("medium_term")
-                .limit(12)
+                .limit(50)
                 .offset(5)
                 .build();
         try {
@@ -46,7 +46,7 @@ public class SpotifyController {
         SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
         final GetUsersTopTracksRequest getUsersTopTracksRequest = spotifyApi.getUsersTopTracks()
                 .time_range("medium_term")
-                .limit(15)
+                .limit(50)
                 .offset(5)
                 .build();
 

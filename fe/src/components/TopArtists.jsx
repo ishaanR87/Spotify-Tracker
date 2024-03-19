@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import Layout from "./Layout"; // Import the Layout component
 import "../styles/TopArtists.css";
 
 function TopArtists() {
@@ -17,20 +18,22 @@ function TopArtists() {
   }, []);
 
   return (
-    <div className="artists-grid">
-      {topArtists ? (
-        topArtists.map((artist) => (
-          <div key={artist.name} className="artist-card">
-            <img src={artist.images[0].url} alt={artist.name} />
-            <div className="card-body">
-              <h5 className="card-title">{artist.name}</h5>
+    <Layout>
+      <div className="artists-grid">
+        {topArtists ? (
+          topArtists.map((artist) => (
+            <div key={artist.name} className="artist-card">
+              <img src={artist.images[0].url} alt={artist.name} />
+              <div className="card-body">
+                <h5 className="card-title">{artist.name}</h5>
+              </div>
             </div>
-          </div>
-        ))
-      ) : (
-        <h1>Retrieving...</h1>
-      )}
-    </div>
+          ))
+        ) : (
+          <h1>Retrieving...</h1>
+        )}
+      </div>
+    </Layout>
   );
 }
 
