@@ -1,6 +1,7 @@
 package com.ishaan.spotifybackend.service;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.context.annotation.Bean;
 import org.springframework.stereotype.Service;
 import se.michaelthelin.spotify.SpotifyApi;
 import se.michaelthelin.spotify.SpotifyHttpManager;
@@ -25,7 +26,7 @@ public class SpotifyService {
             throw new RuntimeException("Failed to create SpotifyApi instance: " + e.getMessage(), e);
         }
     }
-
+    @Bean
     public SpotifyApi getSpotifyApi() {
         return spotifyApi;
     }

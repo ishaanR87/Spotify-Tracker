@@ -3,10 +3,29 @@ import { Link } from "react-router-dom";
 import "../styles/NavBar.css";
 
 function Navbar() {
+
+  const handleLogout = () => {
+    fetch("http://localhost:8080/api/logout", {
+      method: "DELETE",
+    })
+      .then(response => {
+        if (response.ok) {
+          // logout was successful
+          window.location.href = "/login"; 
+        } else {
+          // handle logout failure
+          console.error("Logout failed:", response.statusText);
+        }
+      })
+      .catch(error => {
+        console.error("Error during logout:", error);
+      });
+  };
+
   return (
     <nav className="nav">
       <Link to="/home" className="home">
-        Spotify Tracker
+        Home
       </Link>
       <ul>
         <li>
@@ -19,7 +38,7 @@ function Navbar() {
           <Link to="/my-playlist">My Playlist</Link>
         </li>
         <li>
-          <Link to="/">Logout</Link>
+          <Link to="/" onClick={handleLogout}>Logout</Link>
         </li>
       </ul>
     </nav>
