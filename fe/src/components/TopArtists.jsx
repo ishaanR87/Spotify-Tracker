@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Layout from "./Layout"; // Import the Layout component
+import Layout from "./Layout"; 
 import "../styles/TopArtists.css";
 
 function TopArtists() {
