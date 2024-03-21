@@ -71,7 +71,7 @@ public class SpotifyController {
         // fetch top tracks
         final GetUsersTopTracksRequest getUsersTopTracksRequest = spotifyApi.getUsersTopTracks()
                 .time_range("medium_term")
-                .limit(5)
+                .limit(30)
                 .offset(0)
                 .build();
 
