@@ -25,8 +25,18 @@ function TopTracks() {
             <div key={track.name} className="track-card">
               <img src={track.album.images[0].url} alt={track.name} />
               <div className="card-body">
-                <h5 className="card-title">{track.name}</h5>
-                <p className="card-text">{track.artists[0].name}</p>
+                <h3
+                  className="card-title"
+                  style={{ color: "white", fontFamily: "Helvetica" }}
+                >
+                  {track.name}
+                </h3>
+                <h4
+                  className="card-text"
+                  style={{ color: "white", fontFamily: "Helvetica" }}
+                >
+                  {track.artists[0].name}
+                </h4>
               </div>
             </div>
           ))

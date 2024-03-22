@@ -28,9 +28,15 @@ function RecommendedSongs() {
             <div key={song.id} className="song-card">
               <img src={song.album.images[0].url} alt={song.album.name} />
               <div className="song-details">
-                <h2>{song.name}</h2>
-                <p>Artist: {song.artists[0].name}</p>
-                <p>Album: {song.album.name}</p>
+                <h3 style={{ color: "white", fontFamily: "Helvetica" }}>
+                  {song.name}
+                </h3>
+                <h4 style={{ color: "white", fontFamily: "Helvetica" }}>
+                  {song.artists[0].name}
+                </h4>
+                <h5 style={{ color: "grey", fontFamily: "Helvetica" }}>
+                  Album: {song.album.name}
+                </h5>
               </div>
             </div>
           ))}

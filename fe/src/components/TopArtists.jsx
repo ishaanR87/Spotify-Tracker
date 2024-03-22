@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Layout from "./Layout"; 
+import Layout from "./Layout";
 import "../styles/TopArtists.css";
 
 function TopArtists() {
@@ -25,7 +25,12 @@ function TopArtists() {
             <div key={artist.name} className="artist-card">
               <img src={artist.images[0].url} alt={artist.name} />
               <div className="card-body">
-                <h5 className="card-title">{artist.name}</h5>
+                <h5
+                  className="card-title"
+                  style={{ color: "white", fontFamily: "Helvetica" }}
+                >
+                  {artist.name}
+                </h5>
               </div>
             </div>
           ))
