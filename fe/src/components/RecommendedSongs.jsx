@@ -6,7 +6,7 @@ function RecommendedSongs() {
   const [recommendedSongs, setRecommendedSongs] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/recommendations")
+    fetch("https://localhost:8080/api/recommendations")
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched data:", data);

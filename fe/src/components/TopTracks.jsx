@@ -6,7 +6,7 @@ function TopTracks() {
   const [topTracks, setTopTracks] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/top-tracks")
+    fetch("https://localhost:8080/api/top-tracks")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

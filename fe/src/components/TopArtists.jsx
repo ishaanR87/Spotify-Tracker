@@ -6,7 +6,7 @@ function TopArtists() {
   const [topArtists, setTopArtists] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/top-artists")
+    fetch("https://localhost:8080/api/top-artists")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
