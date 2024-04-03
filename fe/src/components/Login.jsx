@@ -3,7 +3,7 @@ import "../styles/Login.css";
 
 function Login() {
   const handleSpotifyLogin = () => {
-    fetch("https://localhost:8080/api/login")
+    fetch("https://spotify-tracker-backend.onrender.com/api/login")
       .then((response) => response.text())
       .then((response) => {
         window.location.replace(response);

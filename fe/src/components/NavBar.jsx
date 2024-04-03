@@ -4,7 +4,7 @@ import "../styles/NavBar.css";
 
 function NavBar() {
   const handleLogout = () => {
-    fetch("https://localhost:8080/api/logout", {
+    fetch("https://spotify-tracker-backend.onrender.com/api/logout", {
       method: "DELETE",
     })
       .then((response) => {

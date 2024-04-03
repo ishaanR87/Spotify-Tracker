@@ -6,7 +6,7 @@ function RecommendedSongs() {
   const [recommendedSongs, setRecommendedSongs] = useState([]);
 
   useEffect(() => {
-    fetch("https://localhost:8080/api/recommendations")
+    fetch("https://spotify-tracker-backend.onrender.com/api/recommendations")
       .then((response) => response.json())
       .then((data) => {
         console.log("Fetched data:", data);

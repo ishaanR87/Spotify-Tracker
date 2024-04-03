@@ -6,7 +6,7 @@ function TopArtists() {
   const [topArtists, setTopArtists] = useState();
 
   useEffect(() => {
-    fetch("https://localhost:8080/api/top-artists")
+    fetch("https://spotify-tracker-backend.onrender.com/api/top-artists")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

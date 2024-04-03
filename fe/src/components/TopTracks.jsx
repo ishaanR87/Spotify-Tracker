@@ -6,7 +6,7 @@ function TopTracks() {
   const [topTracks, setTopTracks] = useState();
 
   useEffect(() => {
-    fetch("https://localhost:8080/api/top-tracks")
+    fetch("https://spotify-tracker-backend.onrender.com/api/top-tracks")
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
