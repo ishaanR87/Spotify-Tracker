@@ -3,6 +3,7 @@ package com.ishaan.spotifybackend.controllers;
 import java.util.ArrayList;
 import java.util.List;
 
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -19,6 +20,7 @@ import se.michaelthelin.spotify.SpotifyApi;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "https://spotify-tracker-frontend.onrender.com")
 public class SpotifyController {
 
     private final SpotifyService spotifyService;

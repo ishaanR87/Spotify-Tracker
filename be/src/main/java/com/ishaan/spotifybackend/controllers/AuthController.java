@@ -1,6 +1,7 @@
 package com.ishaan.spotifybackend.controllers;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -20,6 +21,7 @@ import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 
 @RestController
 @RequestMapping("/api")
+@CrossOrigin(origins = "https://spotify-tracker-frontend.onrender.com")
 public class AuthController {
 
     private final SpotifyService spotifyService;
