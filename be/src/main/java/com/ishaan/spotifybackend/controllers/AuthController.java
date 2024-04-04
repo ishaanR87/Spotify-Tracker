@@ -58,7 +58,7 @@ public class AuthController {
             System.out.println("Error: " + e.getMessage());
         }
         System.out.println(spotifyApi.getAccessToken());
-        response.sendRedirect("https://spotify-tracker-frontend.onrender.com/home");
+        response.sendRedirect("https://spotify-tracker-frontend.onrender.com");
     }
 
     @DeleteMapping("/logout")
