@@ -26,7 +26,6 @@ public class SpotifyController {
     public SpotifyController(SpotifyService spotifyService) {
         this.spotifyService = spotifyService;
     }
-
     @GetMapping(value = "top-artists")
     public Artist[] getUserTopArtists() {
         SpotifyApi spotifyApi = spotifyService.getSpotifyApi();
