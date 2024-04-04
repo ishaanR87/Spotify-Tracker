@@ -21,6 +21,7 @@ import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 
 @RestController
 @RequestMapping("/api")
+
 public class AuthController {
 
     private final SpotifyService spotifyService;
@@ -31,7 +32,7 @@ public class AuthController {
         this.spotifyApi = spotifyApi;
     }
 
-    @GetMapping("login")
+    @GetMapping("/login")
     public String spotifyLogin() {
         AuthorizationCodeUriRequest authorizationCodeUriRequest = spotifyApi.authorizationCodeUri()
                 .scope("user-read-private, user-read-email, user-top-read")
@@ -42,7 +43,7 @@ public class AuthController {
         return uri.toString();
     }
 
-    @GetMapping(value = "get-user-code/")
+    @GetMapping(value = "/get-user-code/")
     public void getSpotifyCode(@RequestParam("code") String userCode, HttpServletResponse response) throws IOException {
         AuthorizationCodeRequest authorizationCodeRequest = spotifyApi.authorizationCode(userCode)
                 .build();
