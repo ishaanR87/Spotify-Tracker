@@ -24,11 +24,9 @@ import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 
 public class AuthController {
 
-    private final SpotifyService spotifyService;
     private final SpotifyApi spotifyApi;
 
-    public AuthController(SpotifyService spotifyService, @Autowired SpotifyApi spotifyApi) {
-        this.spotifyService = spotifyService;
+    public AuthController(@Autowired SpotifyApi spotifyApi) {
         this.spotifyApi = spotifyApi;
     }
 
