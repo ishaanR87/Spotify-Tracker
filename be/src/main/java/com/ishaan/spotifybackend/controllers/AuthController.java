@@ -21,7 +21,6 @@ import se.michaelthelin.spotify.exceptions.SpotifyWebApiException;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://spotify-tracker-frontend.onrender.com")
 public class AuthController {
 
     private final SpotifyService spotifyService;

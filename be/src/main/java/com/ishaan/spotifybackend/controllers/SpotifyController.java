@@ -20,7 +20,6 @@ import se.michaelthelin.spotify.SpotifyApi;
 
 @RestController
 @RequestMapping("/api")
-@CrossOrigin(origins = "https://spotify-tracker-frontend.onrender.com")
 public class SpotifyController {
 
     private final SpotifyService spotifyService;
