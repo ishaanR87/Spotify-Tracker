@@ -33,7 +33,7 @@
   }
 }
 
-/* Media query for phone screens */
+
 @media only screen and (max-width: 600px) {
   .artists-grid {
     grid-template-columns: 1fr; 

@@ -50,36 +50,21 @@ body {
   margin-top: 10vh;
 }
 
-/* Media query for tablet screens */
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 800px) {
   .nav {
-    flex-direction: column;
-    align-items: flex-start;
-    height: auto;
     padding: 2%;
   }
 
-  .nav ul {
-    flex-direction: column;
-    gap: 1rem;
-  }
-
   .nav a {
+    font-size: 8px;
     padding: 0.5rem;
-    font-size: 20px;
+  }
+
+  .nav ul {
+    gap: 0.5rem;
   }
 
   .content {
-    margin-top: 15vh;
-  }
-}
-
-@media only screen and (max-width: 600px) {
-  .nav a {
-    font-size: 18px;
-  }
-
-  .content {
-    margin-top: 20vh;
+    margin-top: 10vh;
   }
 }

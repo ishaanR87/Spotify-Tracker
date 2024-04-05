@@ -1,19 +1,25 @@
 .home-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .content {
-    text-align: center;
-    margin-top: 180px; 
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    font-size: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100vh;
+}
 
-  .content p {
-    color: #1db954;
-    font-size: 24px;
+.content {
+  text-align: center;
+  margin-top: 300px;
+  color: white;
+  font-family: "Courier New", Courier, monospace;
+  font-size: 20px;
+}
+
+.content p {
+  color: #1db954;
+  font-size: 24px;
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    margin-top: 200px;
   }
+}

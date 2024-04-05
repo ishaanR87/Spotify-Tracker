@@ -32,11 +32,15 @@
   .tracks-grid {
     grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     gap: 10px;
-    padding-top: 50px;
+    padding-top: 150px;
   }
 
   .track-card {
     height: auto;
     font-size: 12px;
+  }
+
+  .content {
+    margin-top: 100px;
   }
 }
