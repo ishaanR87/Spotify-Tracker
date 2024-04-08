@@ -1,5 +1,5 @@
 # Description
-Spotify Tracker is an application which is aimed to retreive Spotify data such as users' top artists and top tracks. Aiming to mimic Spotify's "Wrapped" functionality, this tracker will also also users to find recommended songs based on their music preferences.
+Spotify Tracker is an application which retreives Spotify data such as users' top artists and top tracks. Aiming to mimic Spotify's "Wrapped" functionality, this tracker will also also users to find recommended songs based on their music preferences.
 
 
 Deployed Website Link (Render): [https://country-project-frontend.onrender.com/ ](https://spotify-tracker-frontend.onrender.com)
